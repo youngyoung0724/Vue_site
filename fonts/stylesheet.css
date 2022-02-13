@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Malgun Gothic';
+    src: url('MalgunGothicRegular.eot');
+    src: url('MalgunGothicRegular.eot?#iefix') format('embedded-opentype'),
+        url('MalgunGothicRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

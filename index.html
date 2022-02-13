@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 사이트 제작</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 리스트 나열 방식은 모두 v-for로 구성한다. : 헤더 메뉴, cont1-el의 내부 콘텐츠, cont2-el의 내부 콘텐츠 -->
+    <div id="app">
+        <header-el></header-el>
+        <bannertop-el></bannertop-el>
+        <cont-el></cont-el>
+        <bannermid-el></bannermid-el>
+        <cont2-el></cont2-el>
+        <review-el></review-el>
+        <footer-el></footer-el>
+    </div>
+
+    <!-- header -->
+    <!-- <header>
+        <div class="wrap">
+            <div class="logo">
+                <img src="./img/logo_fm.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">about</a></li>
+                    <li><a href="">move</a></li>
+                    <li><a href="">artist</a></li>
+                    <li><a href="">audition</a></li>
+                    <li><a href="">community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header> -->
+
+    <!-- banner -->
+    <!-- <div class="banner">
+        <div class="dark">
+            <div class="wrap">
+                <div class="txt_part">
+                <h2>지금부터 당신의 영화가<br>
+                시작됩니다.</h2>
+                <a href="#">오디션 참가</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Today's Movie -->
+    <!-- <div class="movie">
+        <h2>Today's Movie</h2>
+        <div class="wrap">
+            <div class="contents">
+                <div class="box">
+                    <div class="actor"> 
+                        <img src="./img/play_icon.png" alt="">
+                    </div>
+                    <h1>죄 많은 소녀 (After My Death, 2019)</h1>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- banner_middle -->
+    <!-- <div class="banner_middle">
+        <div class="wrap">
+            <div class="txt">
+            <h1>Audition Schedule</h1>
+            <p>실시간으로 업데이트 되는 오디션 정보를 확인하실 수 있습니다.<br>배우 또는 배우 지망생분들의 많은 참여 바랍니다.</p>
+                <a class="btn" href="#">오디션 정보 확인</a>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div id="actors">
+        <div class="title">
+            <h2>Actors</h2>
+        </div>
+        <div class="people">
+            <div class="box">
+                    <div class="txt_part">
+                        <p>전여빈</p>
+                        <a class="btn" href="">필모그래피</a>
+                    </div>
+                <img src="./img/yeobeen.png" alt="">
+            </div> 
+        </div>
+        <a href="">더보기</a>
+    </div>
+    -->
+
+    <!-- review -->
+    <!-- <div class="review">
+        <div class="wrap">
+            <div class="txt">
+                <h2>Audition Reviewes</h2>
+                <p>1차 오디션 합격 후, 감독님과의 직접 오디션을 보는 소중한 기회를 얻게 되었습니다. 감독님께서 제시하신 키워드에 맞게<br> 준비한 연기를 보여드렸습니다. 연기가 끝나고 감독님께서는 호흡, 발음, 발성, 집중력 등 다각도에서 꼼꼼한 평을<br> 해주셨습니다. 연기뿐만 아니라 프로필 사진에 대해서도 조언을 해주셨고, 제가 미처 생각하지 못했던 부분을 짚어주셔서 큰<br> 도움을 받게 되었습니다.</p>
+                <div class="img"></div>
+                <div class="name">김주영</div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- footer -->
+    <!-- <footer>
+        <div class="wrap">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">고객상담실</a></li>
+                <li><a href="#">개인정보취급방침</a></li>
+            </ul>
+            <div class="line"></div>
+            <div class="bottom">
+                <div class="right">
+                    <ul>
+                        <li><a>Filmmakers</a></li>
+                        <li><a>대표 : 임지애</a></li>
+                        <li><a>사업자등록번호 : 113-28-507</a></li>
+                        <li><a>주소 : 서울특별시 강남구 논현로</a></li>
+                        <li><a>개인정보관리책임자 : 한상용</a></li>
+                        <li><a>ⓒ 1999 - 2021 Filmmakers</a></li>
+                    </ul>
+                </div>
+                <div class="left">
+                    <ul>
+                        <li><a>고객센터(이용 및 결제 문의) 제휴 및 대외 협력, 광고 문의</a></li>
+                        <li><a>대표전화 : 02-1234-5678</a></li>
+                        <li><a>카카오톡 플러스친구 : 필름메이커스</a></li>
+                        <li><a href="#">이메일 : info@filmmakers.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+
+
+
+
+    <script>
+        Vue.component("header-el",  {
+            data : () => {
+                return {
+                    menuList : ["about", "move", "artist", "audition", "community"],
+                }
+            },
+            template : `
+            <header>
+                <div class="wrap">
+                    <div class="logo">
+                        <img src="./img/logo_fm.png" alt="">
+                    </div>
+                    <nav>
+                        <ul>
+                           <li v-for="list in menuList"><a href="#">{{list}}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            `,       
+        });
+        Vue.component("bannertop-el", {
+            template : `
+            <div class="banner">
+                <div class="dark">
+                    <div class="wrap">
+                        <div class="txt_part">
+                        <h2>지금부터 당신의 영화가<br>
+                        시작됩니다.</h2>
+                        <a href="#">오디션 참가</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             `
+        });
+        Vue.component("cont-el", {
+            data : () => {
+                return {
+                    actorList : [
+                        {img : "cont_01.png", img2 : "play_icon.png", title : "죄 많은 소녀 (After My Death, 2019)"},
+                        {img : "cont_02.jpeg", img2 : "play_icon.png", title : "소공녀 (Microhabitat, 2020)"},
+                        {img : "cont_03.jpg", img2 : "play_icon.png", title : "벌새 (House of Hummingbird, 2018)"}
+                    ]
+                }
+            },
+            template : `
+            <div class="movie">
+                <h2>Today's Movie</h2>
+                <div class="wrap">
+                    <div class="contents">
+                        <div v-for="actor in actorList" class="box">
+                            <div class="actor" :style="{ backgroundImage: 'url(./img/' + actor.img + ')' }">
+                                <img :src="'./img/'+actor.img2" alt="">
+                            </div>
+                            <h1>{{actor.title}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            `,
+        });
+        Vue.component("bannermid-el", {
+            template : `
+            <div class="banner_middle">
+                <div class="wrap">
+                    <div class="txt">
+                    <h1>Audition Schedule</h1>
+                    <p>실시간으로 업데이트 되는 오디션 정보를 확인하실 수 있습니다.<br>배우 또는 배우 지망생분들의 많은 참여 바랍니다.</p>
+                        <a class="btn" href="#">오디션 정보 확인</a>
+                    </div>
+                </div>
+            </div>
+            `
+        });
+        Vue.component("cont2-el", {
+            data : () => {
+                return {
+                    people : [
+                        {img:"yeobeen.png", name: "전여빈", filmora : "필모그래피"},
+                        {img:"saebyeok.png", name: "김새벽", filmora : "필모그래피"},
+                        {img:"sanghee.png", name: "이상희", filmora : "필모그래피"},
+                        {img:"yeeun.png", name: "김예은", filmora : "필모그래피"},
+                        {img:"hakju.png", name: "이학주", filmora : "필모그래피"},
+                        {img:"jungmin.png", name: "박정민", filmora : "필모그래피"},
+                    ]
+                }
+            },
+            template : `
+            <div id="actors">
+                <div class="title">
+                    <h2>Actors</h2>
+                </div>
+                <div class="people">
+                    <div v-for="fil in people" class="box">
+                            <div class="txt_part">
+                                <p>{{fil.name}}</p>
+                                <a class="btn" href="">{{fil.filmora}}</a>
+                            </div>
+                        <img :src="'./img/'+fil.img" alt="">
+                    </div> 
+                </div>
+                <a href="">더보기</a>
+            </div>
+            `
+        })
+
+        Vue.component("review-el", {
+            data : () => {
+                return {
+                    review : [
+                        "movie_image_00.jpg", "Audition Reviewes", "1차 오디션 합격 후, 감독님과의 직접 오디션을 보는 소중한 기회를 얻게 되었습니다. 감독님께서 제시하신 키워드에 맞게<br> 준비한 연기를 보여드렸습니다. 연기가 끝나고 감독님께서는 호흡, 발음, 발성, 집중력 등 다각도에서 꼼꼼한 평을<br> 해주셨습니다. 연기뿐만 아니라 프로필 사진에 대해서도 조언을 해주셨고, 제가 미처 생각하지 못했던 부분을 짚어주셔서 큰<br> 도움을 받게 되었습니다.", "rev_peo.png", "김주영"
+                    ]
+                }
+            },
+            template : `
+            <div class="review" :style="{ backgroundImage: 'url(./img/' + review[0] + ')' }">
+                <div class="wrap">
+                    <div class="txt">
+                        <h2>{{review[1]}}</h2>
+                        <p>{{review[2]}}</p>
+                        <div class="img" :style="{ backgroundImage: 'url(./img/' + review[3] + ')' }"></div>
+                        <div class="name">{{review[4]}}</div>
+                    </div>
+                </div>
+            </div>
+            `,
+        });
+        Vue.component("footer-el", {
+            template : `
+            <footer>
+                <div class="wrap">
+                    <ul>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">고객상담실</a></li>
+                        <li><a href="#">개인정보취급방침</a></li>
+                    </ul>
+                    <div class="line"></div>
+                    <div class="bottom">
+                        <div class="right">
+                            <ul>
+                                <li><a>Filmmakers</a></li>
+                                <li><a>대표 : 임지애</a></li>
+                                <li><a>사업자등록번호 : 113-28-507</a></li>
+                                <li><a>주소 : 서울특별시 강남구 논현로</a></li>
+                                <li><a>개인정보관리책임자 : 한상용</a></li>
+                                <li><a>ⓒ 1999 - 2021 Filmmakers</a></li>
+                            </ul>
+                        </div>
+                        <div class="left">
+                            <ul>
+                                <li><a>고객센터(이용 및 결제 문의) 제휴 및 대외 협력, 광고 문의</a></li>
+                                <li><a>대표전화 : 02-1234-5678</a></li>
+                                <li><a>카카오톡 플러스친구 : 필름메이커스</a></li>
+                                <li><a href="#">이메일 : info@filmmakers.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            `
+        });
+
+        new Vue({
+            el : "#app",
+        })
+    </script> 
+
+    
+
+    <!-- <script>
+        Vue.component("bannerTop-el", {
+            template : `
+            <div class="banner">
+                <div class="dark">
+                    <div class="wrap">
+                        <div class="txt_part">
+                        <h2>지금부터 당신의 영화가<br>
+                        시작됩니다.</h2>
+                        <a href="#">오디션 참가</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             `
+        });
+                            
+        new Vue({
+            el : "#app",
+        });
+    </script> -->
+
+
+    
+</body>
+</html>
